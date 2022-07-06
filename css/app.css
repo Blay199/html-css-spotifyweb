@@ -29,3 +29,18 @@ button {
     background-color: transparent;
 }
 
+body {
+    display: flex; 
+    flex-direction: column;   
+}
+
+.display {
+    min-width: 1200px;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.toolbar {
+    min-width: 1200px;
+    min-height: 80px;
+}
