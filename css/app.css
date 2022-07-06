@@ -35,12 +35,14 @@ body {
 }
 
 .display {
+    background-color: var(--main-bg-color);
     min-width: 1200px;
     flex-grow: 1;
     flex-basis: 100%;
 }
 
 .toolbar {
+    background-color: var(--toolbar-bg-color);
     min-width: 1200px;
     min-height: 80px;
 }
