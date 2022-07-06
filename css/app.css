@@ -32,11 +32,11 @@ button {
 body {
     display: flex; 
     flex-direction: column;   
+    height: 100vh;
 }
 
 .display {
     background-color: var(--main-bg-color);
-    min-width: 1200px;
     flex-grow: 1;
     flex-basis: 100%;
 }
