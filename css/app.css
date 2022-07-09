@@ -1,13 +1,27 @@
-:root {
-    --main-bg-color: #141922;
-    --toolbar-bg-color: #282828;
-    --header-bg-color: black;
-}
-
-
 html {
     font-family: 'Signika', sans-serif;
-    color: white;
+}
+
+:root {
+    --toolbar-bg-color: #282828;
+    --main-bg-color: #141922;
+    --sidebar-bg-color: black;
+    --green: #A3F02C;
+    --grey: #717171;
+}
+
+ul, ol, menu {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+    display: inline-block;
 }
 
 * {
@@ -16,39 +30,102 @@ html {
     padding: 0;
 }
 
-ul, ol, menu {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-button {
-    border: none;
-    background-color: transparent;
-}
-
 body {
-    display: flex; 
-    flex-direction: column;   
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.display {
-    background-color: var(--main-bg-color);
+.content-wrapper {
+    overflow: hidden;
+    /* border: 2px solid red; */
     flex-grow: 1;
-    flex-basis: 100%;
     display: flex;
 }
 
 .toolbar {
+    flex-basis: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--toolbar-bg-color);
-    min-width: 1200px;
-    min-height: 80px;
+    padding: 10px 0px;
+    /* border: 2px solid green; */
 }
 
-.display__header {
-    min-width: 120px;
-    background-color: var(--header-bg-color);    
+.sidebar {
+    flex-shrink: 0;
+    flex-basis: 50px;
+    background-color: var(--sidebar-bg-color);
+    /* padding: 20px; */
+    /* border: 2px solid salmon; */
+}
+
+@media (min-width: 550px) {
+    .sidebar {
+        flex-basis: 230px;
+    }
+}
+
+.main-content {
+    overflow: auto;
+    background-color: var(--main-bg-color);
+    padding: 20px;
+    /* border: 2px solid blue; */
+    flex-grow: 1;
+}
+
+.toolbar > * {
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.current-song, .volume {
+    flex-basis: 230px;
+}
+
+.player {
+    flex-basis: 35%;
+}
+
+.sidebar-pad {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.logo-wrapper {
+     padding-top: 1.25rem;
+     padding-bottom: 1.25rem;
+}
+
+.logo-text {
+    display: none;
+    height: 2.5rem;
+} 
+
+@media (min-width: 550px) {
+    .logo-text {
+        display: block;
+    }
+    .logo {
+        display: none;
+    }
+}
+
+.nav-button a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.nav-button {
+    color: var(--grey);
+}
+
+.nav-button img {
+    opacity: 0.6;
+    width: 1.75rem;  
 }
